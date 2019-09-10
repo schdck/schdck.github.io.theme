@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="about">
+  <div class="about-container">
+    {% if site.author.image %}
+      <img class="about-container-image" src="{{ site.author.image }}" />
+    {% endif %}
+
+    <div class="about-container-bio">
+      {% if site.author.short_bio %}
+        <p>
+            {{site.author.short_bio}}
+        </p>
+      {% endif %}
+      <p>
+          {% if site.author.github_username %}
+            <a target="_blank" href="http://github.com/{{site.author.github_username}}">github</a> | 
+          {% endif %}
+  
+          {% if site.author.stackoverflow_id %}
+            <a target="_blank" href="http://stackoverflow.com/users/{{site.author.stackoverflow_id}}">stackoverflow</a> | 
+          {% endif %}
+  
+          {% if site.author.twitter_username %}
+            <a target="_blank" href="http://twitter.com/{{site.author.twitter_username}}">twitter</a> |
+          {% endif %}
+  
+          {% if site.author.steam_id %} 
+            <a target="_blank" href="https://steamcommunity.com/id/{{site.author.steam_id}}">steam</a>
+          {% endif %}
+  
+          {% if site.author.email %} 
+            <br>
+            {{site.author.email}}
+          {% endif %}
+        </p>
+    </div>
+  </div>
+
+  <div class="about-line"></div>
+
+  {{ content }}
+
+</div>
